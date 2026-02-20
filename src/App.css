@@ -18,7 +18,7 @@ body {
 .custom-cursor.hovered {
     width: 100px;
     height: 100px;
-    background: rgb(238, 29, 35,0.4);
+    background: rgb(238, 29, 35, 0.4);
     z-index: 1;
 }
 
