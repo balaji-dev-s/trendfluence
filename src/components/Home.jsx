@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
 import Loader from "./Loader";
 import DImage from "../assets/d-logo.webp";
+import CustomCursor from "./CustomCursor";
 
 export default function Home() {
     const [loadingFinished, setLoadingFinished] = useState(false);
 
     if (!loadingFinished) return <Loader onFinish={() => setLoadingFinished(true)} />;
 
-    // if (loading) return <Loader />;
     return (
         <section className="hero-section d-flex align-items-center">
+            <CustomCursor />
             <div className="container">
                 <div className="row align-items-center">
 

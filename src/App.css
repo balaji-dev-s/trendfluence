@@ -2,6 +2,26 @@ body {
     font-family: 'Poppins', sans-serif !important;
 }
 
+.custom-cursor {
+    position: fixed;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: rgb(238, 29, 35);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease, background 0.3s ease;
+    z-index: 9999;
+}
+
+
+.custom-cursor.hovered {
+    width: 100px;
+    height: 100px;
+    background: rgb(238, 29, 35,0.4);
+    z-index: 1;
+}
+
 .loader-wrapper {
     position: fixed;
     top: 0;
