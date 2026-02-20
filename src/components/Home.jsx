@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 import Loader from "./Loader";
+import DImage from "../assets/d-logo.webp";
 
 export default function Home() {
-    const [loading, setLoading] = useState(true);
-    useEffect(() => {
-        const timer = setTimeout(() => setLoading(false), 2200);
-        return () => clearTimeout(timer);
-    }, []);
+    const [loadingFinished, setLoadingFinished] = useState(false);
 
-    if (loading) return <Loader />;
+    if (!loadingFinished) return <Loader onFinish={() => setLoadingFinished(true)} />;
+
+    // if (loading) return <Loader />;
     return (
         <section className="hero-section d-flex align-items-center">
             <div className="container">
@@ -16,14 +15,25 @@ export default function Home() {
 
                     <div className="col-lg-7 col-md-12 text-center text-lg-start">
                         <h1 className="hero-title">
-                            TRENDFLUENCE <span>Creative Studio</span>
+                            TREN<img src={DImage} alt="D" style={{
+                                width: ".56em", verticalAlign: "middle", display: "inline-block", position: "relative", top: "-.069em"
+                            }} />
+                            FLUENCE <span>Creative Studio</span>
                         </h1>
 
                         <p className="hero-subtitle">
-                            A full-service Graphic & Web Design agency delivering creative,
-                            strategic, and result-driven solutions. We build strong visual
-                            identities, increase brand visibility, and create digital
-                            experiences that don’t just look good — they perform.
+                            We craft <span className="highlight">visual experiences</span> that{" "}
+                            <span className="highlight">shape perception</span>,{" "}
+                            <span className="highlight">build trust</span>, and move businesses forward. Every
+                            project blends <span className="highlight">creativity</span> with{" "}
+                            <span className="highlight">strategic thinking</span> to ensure your brand stands out
+                            with <span className="highlight">clarity</span> and{" "}
+                            <span className="highlight">confidence</span>.<br />
+                            At <span className="highlight">Trendfluence Creative Studio</span>, design is more than
+                            aesthetics. It is a purposeful approach to{" "}
+                            <span className="highlight">strengthening identity</span>,{" "}
+                            <span className="highlight">increasing visibility</span>, and creating{" "}
+                            <span className="highlight">lasting impact</span> in a competitive digital space.
                         </p>
 
                         <div className="hero-btn-wrapper">
@@ -51,8 +61,6 @@ export default function Home() {
                                             <span className="star">★</span>
                                             <span className="brand-tag">Digital Marketing</span>
                                             <span className="star">★</span>
-
-                                            {/* Duplicate for smooth infinite loop */}
                                             <span className="brand-tag">Brand Identity</span>
                                             <span className="star">★</span>
                                             <span className="brand-tag">Print & Packaging</span>
