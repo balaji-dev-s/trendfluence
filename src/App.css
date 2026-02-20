@@ -268,3 +268,163 @@ body {
 .loader-wrapper {
     transition: opacity 0.5s;
 }
+
+.custom-toggler {
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: relative;
+    width: 30px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.top {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: black;
+    border-radius: 2px;
+}
+
+.middle {
+    display: block;
+    height: 3px;
+    width: 200%;
+    background: black;
+    border-radius: 2px;
+}
+
+.bottom {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: black;
+    border-radius: 2px;
+    margin-left: 17px;
+}
+
+.burger-icon:hover {
+    background: #ee1d23
+}
+
+.india-text {
+    text-transform: capitalize;
+}
+
+.india-time,
+.our-works {
+    font-weight: 600 !important;
+}
+
+.our-works:hover,
+.india-time:hover {
+    color: #ee1d23;
+}
+
+.custom-toggler:hover .burger-icon {
+    background: #ee1d23;
+}
+
+.offcanvas-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    transform: translateX(100%);
+    transition: transform 0.5s ease;
+    z-index: 2000;
+}
+
+.offcanvas-menu.open {
+    transform: translateX(0);
+}
+
+.blur-section {
+    flex: 1;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.blur-heading {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 4rem;
+    text-align: center;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.links-section {
+    flex: 1;
+    background: #111;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.links-section ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.links-section li {
+    margin: 20px 0;
+}
+
+.links-section a {
+    color: white;
+    font-size: 2rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.links-section a:hover {
+    color: #ff4081;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2.5rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+@media(max-width: 768px) {
+    .links-section a {
+        font-size: 1.5rem;
+    }
+
+    .blur-heading {
+        font-size: 2.5rem;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .blur-section {
+        display: none;
+    }
+    .links-section {
+        flex: 1 1 100%;
+    }
+    .links-section a {
+        font-size: 1.5rem;
+    }
+}

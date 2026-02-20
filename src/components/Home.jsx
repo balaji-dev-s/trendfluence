@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Loader from "./Loader";
 import DImage from "../assets/d-logo.webp";
 import CustomCursor from "./CustomCursor";
-
+import { motion } from "framer-motion";
 export default function Home() {
     const [loadingFinished, setLoadingFinished] = useState(false);
 
@@ -11,10 +11,11 @@ export default function Home() {
     return (
         <section className="hero-section d-flex align-items-center">
             <CustomCursor />
-            <div className="container">
+            <div className="container py-5">
                 <div className="row align-items-center">
 
-                    <div className="col-lg-7 col-md-12 text-center text-lg-start">
+                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}
+                        className="col-lg-7 col-md-12 text-center text-lg-start">
                         <h1 className="hero-title">
                             TREN<img src={DImage} alt="D" style={{
                                 width: ".56em", verticalAlign: "middle", display: "inline-block", position: "relative", top: "-.069em"
@@ -42,9 +43,10 @@ export default function Home() {
                                 Let’s Connect
                             </a>
                         </div>
-                    </div>
+                    </motion.div>
 
-                    <div className="col-lg-5 d-lg-block text-center">
+                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}
+                        className="col-lg-5 d-lg-block text-center">
                         <div className="shape-wrapper">
                             <div className="shape-composition">
                                 <div className="circle orange-circle"></div>
@@ -83,10 +85,10 @@ export default function Home() {
                                 <div className="ring ring-bottom"></div>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
 
                 </div>
             </div>
-        </section>
+        </section >
     );
 }
