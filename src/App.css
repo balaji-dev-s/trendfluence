@@ -1,3 +1,7 @@
+* {
+    font-family: 'Poppins', sans-serif !important;
+}
+
 body {
     font-family: 'Poppins', sans-serif !important;
 }
@@ -100,10 +104,16 @@ body {
     border-radius: 50px;
     transition: all 0.15s ease;
     text-decoration: none;
+    font-weight: 500 !important;
+    border: 2px solid #6c63ff !important;
 }
 
 .hero-btn:hover {
-    opacity: .7 !important;
+    /* opacity: .7 !important; */
+    background-color: transparent !important;
+    /* border-color: #6c63ff !important; */
+    color: #6c63ff !important;
+    border: 2px solid #6c63ff !important;
 }
 
 .shape-wrapper {
@@ -319,112 +329,251 @@ body {
     font-weight: 600 !important;
 }
 
-.our-works:hover,
+.our-works:hover {
+    color: #ee1d23;
+    cursor: pointer;
+}
+
 .india-time:hover {
     color: #ee1d23;
+    cursor: default;
 }
 
 .custom-toggler:hover .burger-icon {
     background: #ee1d23;
 }
 
+.custom-divider {
+    border: none;
+    height: .3px;
+    background: rgb(184, 184, 184) !important;
+}
+
 .offcanvas-menu {
     position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100vh;
+    inset: 0;
+    z-index: 1050;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.offcanvas-wrapper {
     display: flex;
+    height: 100vh;
+    width: 100%;
     transform: translateX(100%);
-    transition: transform 0.5s ease;
-    z-index: 2000;
+    transition: transform .6s cubic-bezier(.77, 0, .18, 1);
 }
 
 .offcanvas-menu.open {
+    pointer-events: auto;
+}
+
+.offcanvas-menu.open .offcanvas-wrapper {
     transform: translateX(0);
 }
 
 .blur-section {
     flex: 1;
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(184, 184, 184, 0.8);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     display: flex;
-    justify-content: center;
     align-items: center;
-    cursor: pointer;
+    justify-content: center;
 }
 
-.blur-heading {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 4rem;
-    text-align: center;
-    letter-spacing: 2px;
-    margin: 0;
+.blur-section h1 {
+    cursor: default;
 }
 
-.links-section {
-    flex: 1;
-    background: #111;
-    color: white;
+.menu-panel {
+    width: 450px;
+    background: #000;
+    color: #fff;
+    padding: 50px 40px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+    justify-content: space-between;
 }
 
-.links-section ul {
-    list-style: none;
-    padding: 0;
-    text-align: center;
+.offcanvas-menu.open .menu-panel {
+    transform: translateX(0);
 }
 
-.links-section li {
-    margin: 20px 0;
+.offcanvas-menu,
+.offcanvas-wrapper {
+    height: 100vh;
 }
 
-.links-section a {
-    color: white;
-    font-size: 2rem;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.links-section a:hover {
-    color: #ff4081;
+.menu-panel {
+    height: 100vh;
 }
 
 .close-btn {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 2.5rem;
     background: none;
     border: none;
-    color: white;
+    color: #fff;
+    font-size: 2.5rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    color: #ee1d23;
+}
+
+.grey-menu-text {
+    font-weight: 500;
+    font-size: .8rem !important;
+    color: rgb(184, 184, 184) !important;
+    cursor: default;
+}
+
+.social-icon a i:hover {
+    color: #ee1d23;
+}
+
+
+.menu-links a {
+    position: relative;
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 900;
+}
+
+.menu-links a:hover {
+    color: #ee1d23;
+}
+
+.email-link {
+    position: relative;
+    font-size: 1.5rem !important;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 900;
+}
+
+.email-link:hover {
+    color: #ee1d23 !important;
+}
+
+.email-link::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 40px;
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.email-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 40px;
+    width: 100%;
+    height: 1px;
+    background: #fff;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .4s ease;
+}
+
+.email-link:hover::after {
+    transform: scaleX(1);
+}
+
+.email-wrapper {
+    position: relative;
+    display: inline-block;
     cursor: pointer;
 }
 
-@media(max-width: 768px) {
-    .links-section a {
-        font-size: 1.5rem;
-    }
+.plus-icon {
+    display: inline-block;
+    transition: transform .3s ease, color .3s ease;
+}
 
-    .blur-heading {
-        font-size: 2.5rem;
-    }
+.email-text,
+.plus-icon {
+    font-size: 1.5rem;
+    font-weight: 900;
 }
 
 
-@media (max-width: 768px) {
+.email-wrapper:hover .email-text,
+.email-wrapper:hover .plus-icon{
+    color:#ee1d23;
+}
+
+.email-wrapper:hover .plus-icon {
+    transform: rotate(45deg);
+}
+
+.email-toast {
+    position: absolute;
+    top: 120%;
+    right: 0;
+    background: #111;
+    padding: 14px;
+    border-radius: 10px;
+    min-width: 220px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity .25s ease, transform .25s ease;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.email-wrapper:hover .email-toast {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.toast-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: none;
+    border: none;
+    color: #fff;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background .2s ease;
+    width: 100%;
+}
+
+.toast-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+
+@media(max-width:768px) {
+    .offcanvas-wrapper {
+        flex-direction: column;
+    }
+
     .blur-section {
         display: none;
     }
-    .links-section {
-        flex: 1 1 100%;
+
+    .menu-panel {
+        width: 100%;
+        padding: 40px 25px;
     }
-    .links-section a {
-        font-size: 1.5rem;
+
+    .menu-links a {
+        font-size: 22px;
     }
 }

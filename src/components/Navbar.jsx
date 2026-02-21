@@ -16,7 +16,7 @@ export default function Navbar() {
 
     return (
         <>
-            <nav className="navbar px-3 position-absolute w-100 pt-3 pb-5" style={{ background: "transparent", zIndex: 999 }}>
+            <nav className="navbar px-3 position-absolute w-100 pt-3 pb-5 sticky" style={{ background: "transparent", zIndex: 999 }}>
                 <div className="container pt-2 d-flex justify-content-between align-items-center">
                     <a className="navbar-brand" href="#"><img src={Logo} alt="Logo" height="40" /></a>
 
